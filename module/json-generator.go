@@ -36,8 +36,8 @@ func Json_generator(traitArr []string, num int) {
 	result.Attributes = make([]Attributes, 7)
 	result.Properties.Files = make([]Files, 1)
 
-	result.Symbol = "999"
-	result.Description = "99999"
+	result.Symbol = "HUHU"
+	result.Description = "HUHU and friends"
 	result.Attributes[0].Trait_type = "background"
 	result.Attributes[0].Value = traitArr[0]
 	result.Attributes[1].Trait_type = "item"
