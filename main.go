@@ -10,7 +10,9 @@ import (
 	"log"
 	"math/rand"
 	"os"
+	"sort"
 	"strconv"
+	"time"
 
 	"github.com/Todari/go-generative-pfp/module"
 )
@@ -31,8 +33,6 @@ func openAndDecode(imgPath string) image.Image {
 }
 
 func main() {
-	// tierNum := [7]int{10, 100, 700, 1200, 3000, 4990}
-	// traitGroupNum := 7
 
 	var traits = [7]string{"1. background", "2. item", "3. body", "4. clothes", "5. hair", "6. eye", "7. hat"}
 	totalNum := 1000
@@ -53,9 +53,15 @@ func main() {
 		var dna string
 
 		for i, _ := range traitsArr {
+			rand.Seed(time.Now().UnixNano())
 			selecter := rand.Intn(len(traitsArr[i]))
 			images[i] = traitsArr[i][selecter]
-			dna2 := strconv.FormatInt(int64(selecter), 16)
+			var dna2 string
+			if selecter < 16 {
+				dna2 = "0" + strconv.FormatInt(int64(selecter), 16)
+			} else if selecter >= 16 {
+				dna2 = strconv.FormatInt(int64(selecter), 16)
+			}
 			dna += dna2
 		}
 		for _, v := range dnaArr {
@@ -73,13 +79,13 @@ func main() {
 		module.Json_generator(images, i)
 
 		dnaArr = append(dnaArr, dna)
-		fmt.Fprintln(w, dna)
-		fmt.Fprintln(w, dnaArr)
+		fmt.Println(i, dna)
+		// fmt.Fprintln(w, dnaArr)
 
 		decodedImages := make([]image.Image, len(images))
 
-		for i, _ := range images {
-			decodedImages[i] = openAndDecode("./imgs/" + traits[i] + "/" + images[i])
+		for i, v := range images {
+			decodedImages[i] = openAndDecode("./imgs/" + traits[i] + "/" + v)
 		}
 
 		bounds := decodedImages[0].Bounds()
@@ -89,7 +95,7 @@ func main() {
 			draw.Draw(newImage, img.Bounds(), img, image.ZP, draw.Over)
 		}
 
-		result, err := os.Create(strconv.Itoa(i) + ".png")
+		result, err := os.Create("./result/" + strconv.Itoa(i) + ".png")
 		if err != nil {
 			log.Fatalf("Failed to create: %s", err)
 		}
@@ -97,5 +103,10 @@ func main() {
 		png.Encode(result, newImage)
 
 		defer result.Close()
+
+		sort.Strings(dnaArr)
+
 	}
+
+	defer fmt.Println(dnaArr)
 }
