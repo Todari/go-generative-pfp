@@ -12,6 +12,7 @@ import (
 	"os"
 	"sort"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/Todari/go-generative-pfp/module"
@@ -32,11 +33,23 @@ func openAndDecode(imgPath string) image.Image {
 	return decoded
 }
 
+type Trait struct {
+	Rarity string
+	Path   string
+	Name   string
+	Weight int
+	Group  string
+}
+
 func main() {
 
 	var traits = [7]string{"1. background", "2. item", "3. body", "4. clothes", "5. hair", "6. eye", "7. hat"}
 	totalNum := 1000
 	var dnaArr []string
+
+	//trait이름 별 weight를 map으로 만들어 줌
+	weightForTrait := make(map[string]int)
+
 	traitsArr := make([][]string, len(traits))
 	images := make([]string, len(traits))
 	dnaExist := false
@@ -46,6 +59,10 @@ func main() {
 		files, _ := ioutil.ReadDir("./imgs/" + trait)
 		for _, file := range files {
 			traitsArr[i] = append(traitsArr[i], file.Name())
+			traitName := strings.Split(file.Name(), "#")[0]
+			traitWeight, _ := strconv.Atoi(strings.Split(strings.Split(file.Name(), "#")[1], ".")[0])
+			weightForTrait[traitName] = traitWeight
+
 		}
 	}
 

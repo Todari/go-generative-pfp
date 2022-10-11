@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"strconv"
+	"strings"
 )
 
 type Metadata struct {
@@ -39,19 +40,19 @@ func Json_generator(traitArr []string, num int) {
 	result.Symbol = "HUHU"
 	result.Description = "HUHU and friends"
 	result.Attributes[0].Trait_type = "background"
-	result.Attributes[0].Value = traitArr[0]
+	result.Attributes[0].Value = strings.Split(traitArr[0], "#")[0]
 	result.Attributes[1].Trait_type = "item"
-	result.Attributes[1].Value = traitArr[1]
+	result.Attributes[1].Value = strings.Split(traitArr[1], "#")[0]
 	result.Attributes[2].Trait_type = "body"
-	result.Attributes[2].Value = traitArr[2]
+	result.Attributes[2].Value = strings.Split(traitArr[2], "#")[0]
 	result.Attributes[3].Trait_type = "clothes"
-	result.Attributes[3].Value = traitArr[3]
+	result.Attributes[3].Value = strings.Split(traitArr[3], "#")[0]
 	result.Attributes[4].Trait_type = "hair"
-	result.Attributes[4].Value = traitArr[4]
+	result.Attributes[4].Value = strings.Split(traitArr[4], "#")[0]
 	result.Attributes[5].Trait_type = "eye"
-	result.Attributes[5].Value = traitArr[5]
+	result.Attributes[5].Value = strings.Split(traitArr[5], "#")[0]
 	result.Attributes[6].Trait_type = "hat"
-	result.Attributes[6].Value = traitArr[6]
+	result.Attributes[6].Value = strings.Split(traitArr[6], "#")[0]
 
 	result.Properties.Files[0].Type = "image/png"
 	result.Name = "HUHU#" + strconv.Itoa(num)
