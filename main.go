@@ -44,7 +44,7 @@ type Trait struct {
 func main() {
 
 	var traits = [7]string{"1. background", "2. item", "3. body", "4. clothes", "5. hair", "6. eye", "7. hat"}
-	totalNum := 1000
+	totalNum := 2000
 	var dnaArr []string
 
 	//trait이름 별 weight를 map으로 만들어 줌
@@ -62,12 +62,12 @@ func main() {
 			traitName := strings.Split(file.Name(), "#")[0]
 			traitWeight, _ := strconv.Atoi(strings.Split(strings.Split(file.Name(), "#")[1], ".")[0])
 			weightForTrait[traitName] = traitWeight
-
 		}
 	}
 
 	for i := 0; i < totalNum; i++ {
 		var dna string
+		dnaExist = false
 
 		for i, _ := range traitsArr {
 			rand.Seed(time.Now().UnixNano())
@@ -83,12 +83,13 @@ func main() {
 		}
 		for _, v := range dnaArr {
 			if dna == v {
-				fmt.Fprintln(w, "DNA EXIST")
 				dnaExist = true
+				break
 			}
 		}
 
 		if dnaExist == true {
+			fmt.Println("DNA EXIST")
 			i--
 			continue
 		}
@@ -125,5 +126,6 @@ func main() {
 
 	}
 
-	defer fmt.Println(dnaArr)
+	fmt.Println(dnaArr)
+	fmt.Println(len(dnaArr))
 }
