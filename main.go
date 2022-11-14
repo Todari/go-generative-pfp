@@ -7,6 +7,7 @@ import (
 	"image"
 	"image/draw"
 	"image/png"
+	"io/fs"
 	"io/ioutil"
 	"log"
 	"math/rand"
@@ -22,9 +23,6 @@ import (
 func reset() {
 	if !os.IsExist(os.RemoveAll("./result/")) {
 		os.Mkdir("./result/", 0777)
-	}
-	if !os.IsExist(os.RemoveAll("./json/")) {
-		os.Mkdir("./json/", 0777)
 	}
 }
 
@@ -59,15 +57,16 @@ func main() {
 	if doReset {
 		reset()
 	}
+
+	//img 폴더에 저장되어 있는 rarity 이름, trait 이름 설정
 	var rarities = [6]string{"1. legend", "2. prime", "3. master", "4. expert", "5. junior", "6. rookie"}
-	var traits = [11]string{"0. legend", "1. background", "2. body", "3. outfit", "4. backpack", "5. pet", "6. hat", "7. eye", "8. mouth", "9. ring", "10. rarity"}
+	var traits = [15]string{"0. legend", "1. background", "2. backpack", "3. sleepbag", "4. pet", "5. body", "6. outfit", "7. ring", "8. eye", "9. expression", "10. eye acc", "11. mouth", "12. hair", "13. head", "14. rarity"}
 	var dnaArr []string
 
-	//trait이름 별 weight를 map으로 만들어 줌
-	// weightForTrait := make(map[string]int)
-
-	var traitsArr [6][11][]string
+	// 가능한 모든 rarity, trait를 이중배열로 구성
+	var traitsArr [6][15][]string
 	rarityCounter := make([]int, 6)
+	//조합의 파일명을 넣는 슬라이스
 	images := make([]string, len(traits))
 	dnaExist := false
 	rarityFull := false
@@ -76,12 +75,22 @@ func main() {
 
 	for i, rarity := range rarities {
 		for j, trait := range traits {
-			files, _ := ioutil.ReadDir("./imgs/" + rarity + "/" + trait)
+			//피부색 + 눈커풀 컨트롤
+			var files []fs.FileInfo
+			if trait == "9. expression" {
+				files, _ = ioutil.ReadDir("./imgs/" + rarity + "/" + trait + "/Blue/")
+			} else {
+				files, _ = ioutil.ReadDir("./imgs/" + rarity + "/" + trait)
+			}
+
 			for _, file := range files {
-				traitsArr[i][j] = append(traitsArr[i][j], file.Name())
-				// traitName := strings.Split(file.Name(), "#")[0]
-				// traitWeight, _ := strconv.Atoi(strings.Split(strings.Split(file.Name(), "#")[1], ".")[0])
-				// weightForTrait[traitName] = traitWeight
+				//.DS_Store 파일 존재하면 삭제
+				if file.Name() == ".DS_Store" {
+					os.Remove(".DS_Store")
+					continue
+				} else {
+					traitsArr[i][j] = append(traitsArr[i][j], file.Name())
+				}
 			}
 		}
 	}
@@ -122,9 +131,11 @@ func main() {
 				break
 			}
 		}
+
+		//레어리티별 최대 갯수 설정
 		switch raritySelecter {
 		case 0:
-			if rarityCounter[raritySelecter] == 1 {
+			if rarityCounter[raritySelecter] == 0 {
 				rarityFull = true
 			}
 		case 1:
@@ -144,7 +155,7 @@ func main() {
 				rarityFull = true
 			}
 		case 5:
-			if rarityCounter[raritySelecter] == 499 {
+			if rarityCounter[raritySelecter] == 100 {
 				rarityFull = true
 			}
 		}
@@ -164,33 +175,39 @@ func main() {
 		}
 		fmt.Print(rarityCounter)
 
+		//csv 배열에 push
 		csvItem := []string{
 			strconv.Itoa(i),
-			strings.Split(images[0], "#")[0],
-			strings.Split(images[1], "#")[0],
-			strings.Split(images[2], "#")[0],
-			strings.Split(images[3], "#")[0],
-			strings.Split(images[4], "#")[0],
-			strings.Split(images[5], "#")[0],
-			strings.Split(images[6], "#")[0],
-			strings.Split(images[7], "#")[0],
-			strings.Split(images[8], "#")[0],
-			strings.Split(images[9], "#")[0],
-			strings.Split(images[10], "#")[0],
+			strings.Split(images[0], ".")[0],
+			strings.Split(images[2], ".")[0],
+			strings.Split(images[1], ".")[0],
+			strings.Split(images[3], ".")[0],
+			strings.Split(images[4], ".")[0],
+			strings.Split(images[5], ".")[0],
+			strings.Split(images[6], ".")[0],
+			strings.Split(images[7], ".")[0],
+			strings.Split(images[8], ".")[0],
+			strings.Split(images[9], ".")[0],
+			strings.Split(images[10], ".")[0],
+			strings.Split(images[11], ".")[0],
+			strings.Split(images[12], ".")[0],
+			strings.Split(images[13], ".")[0],
+			strings.Split(images[14], ".")[0],
 		}
 		csvCell = append(csvCell, csvItem)
-		// fmt.Print(csvCell)
-
-		module.Json_generator(images, i)
 
 		dnaArr = append(dnaArr, dna)
-		fmt.Println(i, dna)
-		// fmt.Fprintln(w, dnaArr)
+		fmt.Println("ID: ", i, "DNA : ", dna)
 
 		decodedImages := make([]image.Image, len(images))
 
 		for i, v := range images {
-			decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + v)
+			//피부색과 일치하는 눈커풀 넣기
+			if traits[i] == "9. expression" {
+				decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + strings.Split(images[5], ".")[0] + "/" + v)
+			} else {
+				decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + v)
+			}
 		}
 
 		bounds := decodedImages[0].Bounds()
@@ -200,12 +217,20 @@ func main() {
 			draw.Draw(newImage, img.Bounds(), img, image.ZP, draw.Over)
 		}
 
-		result, err := os.Create("./result/" + strconv.Itoa(i) + ".png")
+		//디렉토리 생성 후 이미지 제작
+		os.Mkdir("./result/"+strconv.Itoa(i), 0777)
+		result, err := os.Create("./result/" + strconv.Itoa(i) + "/image.png")
+		result2, _ := os.Create("./result2/" + strconv.Itoa(i) + ".png")
+
+		//json 제작
+		module.Json_generator(images, i)
+
 		if err != nil {
 			log.Fatalf("Failed to create: %s", err)
 		}
 
 		png.Encode(result, newImage)
+		png.Encode(result2, newImage)
 
 		defer result.Close()
 
