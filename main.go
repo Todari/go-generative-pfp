@@ -24,6 +24,9 @@ func reset() {
 	if !os.IsExist(os.RemoveAll("./result/")) {
 		os.Mkdir("./result/", 0777)
 	}
+	if !os.IsExist(os.RemoveAll("./result2/")) {
+		os.Mkdir("./result2/", 0777)
+	}
 }
 
 func openAndDecode(imgPath string) image.Image {
@@ -52,7 +55,7 @@ type Trait struct {
 func main() {
 
 	doReset := true
-	totalNum := 1000
+	totalNum := 100
 
 	if doReset {
 		reset()
@@ -74,6 +77,7 @@ func main() {
 	defer w.Flush()
 
 	for i, rarity := range rarities {
+
 		for j, trait := range traits {
 			//피부색 + 눈커풀 컨트롤
 			var files []fs.FileInfo
@@ -132,30 +136,32 @@ func main() {
 			}
 		}
 
+		fmt.Println("1. DNA Created")
+
 		//레어리티별 최대 갯수 설정
 		switch raritySelecter {
 		case 0:
-			if rarityCounter[raritySelecter] == 0 {
+			if rarityCounter[raritySelecter] == 1 {
 				rarityFull = true
 			}
 		case 1:
-			if rarityCounter[raritySelecter] == 10 {
+			if rarityCounter[raritySelecter] == 1 {
 				rarityFull = true
 			}
 		case 2:
-			if rarityCounter[raritySelecter] == 70 {
+			if rarityCounter[raritySelecter] == 7 {
 				rarityFull = true
 			}
 		case 3:
-			if rarityCounter[raritySelecter] == 120 {
+			if rarityCounter[raritySelecter] == 12 {
 				rarityFull = true
 			}
 		case 4:
-			if rarityCounter[raritySelecter] == 300 {
+			if rarityCounter[raritySelecter] == 30 {
 				rarityFull = true
 			}
 		case 5:
-			if rarityCounter[raritySelecter] == 100 {
+			if rarityCounter[raritySelecter] == 49 {
 				rarityFull = true
 			}
 		}
@@ -173,7 +179,8 @@ func main() {
 			i--
 			continue
 		}
-		fmt.Print(rarityCounter)
+		fmt.Println("2. DNA, rarity checked")
+		// fmt.Print(rarityCounter)
 
 		//csv 배열에 push
 		csvItem := []string{
@@ -195,9 +202,12 @@ func main() {
 			strings.Split(images[14], ".")[0],
 		}
 		csvCell = append(csvCell, csvItem)
+		fmt.Println("3. csv appended")
 
 		dnaArr = append(dnaArr, dna)
 		fmt.Println("ID: ", i, "DNA : ", dna)
+
+		fmt.Println(images)
 
 		decodedImages := make([]image.Image, len(images))
 
@@ -209,6 +219,7 @@ func main() {
 				decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + v)
 			}
 		}
+		fmt.Println("4. img decoded")
 
 		bounds := decodedImages[0].Bounds()
 		newImage := image.NewRGBA(bounds)
@@ -216,21 +227,25 @@ func main() {
 		for _, img := range decodedImages {
 			draw.Draw(newImage, img.Bounds(), img, image.ZP, draw.Over)
 		}
+		fmt.Println("5. img drawed")
 
 		//디렉토리 생성 후 이미지 제작
 		os.Mkdir("./result/"+strconv.Itoa(i), 0777)
 		result, err := os.Create("./result/" + strconv.Itoa(i) + "/image.png")
-		result2, _ := os.Create("./result2/" + strconv.Itoa(i) + ".png")
+		// result2, _ := os.Create("./result2/" + strconv.Itoa(i) + ".png")
 
+		fmt.Println("6. img created")
 		//json 제작
 		module.Json_generator(images, i)
+		fmt.Println("7. json created")
 
 		if err != nil {
 			log.Fatalf("Failed to create: %s", err)
 		}
 
 		png.Encode(result, newImage)
-		png.Encode(result2, newImage)
+		// png.Encode(result2, newImage)
+		fmt.Println("8. img incoded")
 
 		defer result.Close()
 
