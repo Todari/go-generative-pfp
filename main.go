@@ -37,7 +37,7 @@ func openAndDecode(imgPath string) image.Image {
 
 	decoded, err := png.Decode(img)
 	if err != nil {
-		log.Fatalf("Failed to decode %s", err)
+		log.Fatalf("Failed to decode %s : %s", err, imgPath)
 	}
 	defer img.Close()
 
@@ -55,7 +55,7 @@ type Trait struct {
 func main() {
 
 	doReset := true
-	totalNum := 100
+	totalNum := 200
 
 	if doReset {
 		reset()
@@ -63,7 +63,7 @@ func main() {
 
 	//img 폴더에 저장되어 있는 rarity 이름, trait 이름 설정
 	var rarities = [6]string{"1. legend", "2. prime", "3. master", "4. expert", "5. junior", "6. rookie"}
-	var traits = [15]string{"0. legend", "1. background", "2. backpack", "3. sleepbag", "4. pet", "5. body", "6. outfit", "7. ring", "8. eye", "9. expression", "10. eye acc", "11. mouth", "12. hair", "13. head", "14. rarity"}
+	var traits = [15]string{"0. legend", "1. background", "2. backpack", "3. sleepbag", "4. pet", "5. body", "6. outfit", "7. ring", "8. eye", "9. expression", "10. lhair", "11. eye acc", "12. rhair", "13. mouth", "14. rarity"}
 	var dnaArr []string
 
 	// 가능한 모든 rarity, trait를 이중배열로 구성
@@ -120,6 +120,13 @@ func main() {
 			rand.Seed(time.Now().UnixNano())
 			selecter := rand.Intn(len(traitsArr[raritySelecter][i]))
 			images[i] = traitsArr[raritySelecter][i][selecter]
+			// if i==9 {
+			// 	images[i] =
+			// }
+			// 오른쪽 머리를 왼쪽 머리와 동일하게
+			if i == 12 {
+				images[i] = images[10]
+			}
 			var dna2 string
 			if selecter < 16 {
 				dna2 = "0" + strconv.FormatInt(int64(selecter), 16)
@@ -135,33 +142,34 @@ func main() {
 				break
 			}
 		}
+		fmt.Println(images)
 
-		fmt.Println("1. DNA Created")
+		// fmt.Println("1. DNA Created")
 
 		//레어리티별 최대 갯수 설정
 		switch raritySelecter {
 		case 0:
-			if rarityCounter[raritySelecter] == 1 {
+			if rarityCounter[raritySelecter] == 0 {
 				rarityFull = true
 			}
 		case 1:
-			if rarityCounter[raritySelecter] == 1 {
+			if rarityCounter[raritySelecter] == 40 {
 				rarityFull = true
 			}
 		case 2:
-			if rarityCounter[raritySelecter] == 7 {
+			if rarityCounter[raritySelecter] == 40 {
 				rarityFull = true
 			}
 		case 3:
-			if rarityCounter[raritySelecter] == 12 {
+			if rarityCounter[raritySelecter] == 40 {
 				rarityFull = true
 			}
 		case 4:
-			if rarityCounter[raritySelecter] == 30 {
+			if rarityCounter[raritySelecter] == 40 {
 				rarityFull = true
 			}
 		case 5:
-			if rarityCounter[raritySelecter] == 49 {
+			if rarityCounter[raritySelecter] == 40 {
 				rarityFull = true
 			}
 		}
@@ -179,7 +187,7 @@ func main() {
 			i--
 			continue
 		}
-		fmt.Println("2. DNA, rarity checked")
+		// fmt.Println("2. DNA, rarity checked")
 		// fmt.Print(rarityCounter)
 
 		//csv 배열에 push
@@ -202,7 +210,7 @@ func main() {
 			strings.Split(images[14], ".")[0],
 		}
 		csvCell = append(csvCell, csvItem)
-		fmt.Println("3. csv appended")
+		// fmt.Println("3. csv appended")
 
 		dnaArr = append(dnaArr, dna)
 		fmt.Println("ID: ", i, "DNA : ", dna)
@@ -219,7 +227,7 @@ func main() {
 				decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + v)
 			}
 		}
-		fmt.Println("4. img decoded")
+		// fmt.Println("4. img decoded")
 
 		bounds := decodedImages[0].Bounds()
 		newImage := image.NewRGBA(bounds)
@@ -227,27 +235,28 @@ func main() {
 		for _, img := range decodedImages {
 			draw.Draw(newImage, img.Bounds(), img, image.ZP, draw.Over)
 		}
-		fmt.Println("5. img drawed")
+		// fmt.Println("5. img drawed")
 
 		//디렉토리 생성 후 이미지 제작
 		os.Mkdir("./result/"+strconv.Itoa(i), 0777)
-		result, err := os.Create("./result/" + strconv.Itoa(i) + "/image.png")
-		// result2, _ := os.Create("./result2/" + strconv.Itoa(i) + ".png")
+		// result, err := os.Create("./result/" + strconv.Itoa(i) + "/image.png")
+		result2, _ := os.Create("./result2/" + strconv.Itoa(i) + ".png")
 
-		fmt.Println("6. img created")
+		// fmt.Println("6. img created")
 		//json 제작
 		module.Json_generator(images, i)
-		fmt.Println("7. json created")
+		// fmt.Println("7. json created")
 
 		if err != nil {
 			log.Fatalf("Failed to create: %s", err)
 		}
 
-		png.Encode(result, newImage)
-		// png.Encode(result2, newImage)
-		fmt.Println("8. img incoded")
+		// png.Encode(result, newImage)
+		png.Encode(result2, newImage)
+		// fmt.Println("8. img incoded")
 
-		defer result.Close()
+		// defer result.Close()
+		defer result2.Close()
 
 		sort.Strings(dnaArr)
 
