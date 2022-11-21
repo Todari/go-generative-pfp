@@ -37,7 +37,7 @@ func Json_generator(traitArr []string, num int) {
 
 	// json
 	var result Metadata
-	result.Attributes = make([]Attributes, 15)
+	result.Attributes = make([]Attributes, 14)
 	result.Properties.Files = make([]Files, 1)
 
 	result.Symbol = "HUHU"
@@ -58,20 +58,16 @@ func Json_generator(traitArr []string, num int) {
 	result.Attributes[6].Value = strings.Split(traitArr[6], ".")[0]
 	result.Attributes[7].Trait_type = "ring"
 	result.Attributes[7].Value = strings.Split(traitArr[7], ".")[0]
-	result.Attributes[8].Trait_type = "eye"
+	result.Attributes[8].Trait_type = "expression"
 	result.Attributes[8].Value = strings.Split(traitArr[8], ".")[0]
-	result.Attributes[9].Trait_type = "expression"
+	result.Attributes[9].Trait_type = "hair"
 	result.Attributes[9].Value = strings.Split(traitArr[9], ".")[0]
-	result.Attributes[10].Trait_type = "hair"
+	result.Attributes[10].Trait_type = "eye acc"
 	result.Attributes[10].Value = strings.Split(traitArr[10], ".")[0]
-	result.Attributes[11].Trait_type = "eye acc"
-	result.Attributes[11].Value = strings.Split(traitArr[11], ".")[0]
-	// result.Attributes[12].Trait_type = "lefthair"
-	// result.Attributes[12].Value = strings.Split(traitArr[12], ".")[0]
-	result.Attributes[13].Trait_type = "mouth"
-	result.Attributes[13].Value = strings.Split(traitArr[13], ".")[0]
-	result.Attributes[14].Trait_type = "rarity"
-	result.Attributes[14].Value = strings.Split(traitArr[14], ".")[0]
+	result.Attributes[11].Trait_type = "mouth"
+	result.Attributes[11].Value = strings.Split(traitArr[12], ".")[0]
+	result.Attributes[12].Trait_type = "rarity"
+	result.Attributes[12].Value = strings.Split(traitArr[13], ".")[0]
 
 	result.Properties.Files[0].Type = "image/png"
 	result.Name = "HUHU#" + strconv.Itoa(num)

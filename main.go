@@ -55,7 +55,7 @@ type Trait struct {
 func main() {
 
 	doReset := true
-	totalNum := 200
+	totalNum := 500
 
 	if doReset {
 		reset()
@@ -63,11 +63,11 @@ func main() {
 
 	//img 폴더에 저장되어 있는 rarity 이름, trait 이름 설정
 	var rarities = [6]string{"1. legend", "2. prime", "3. master", "4. expert", "5. junior", "6. rookie"}
-	var traits = [15]string{"0. legend", "1. background", "2. backpack", "3. sleepbag", "4. pet", "5. body", "6. outfit", "7. ring", "8. eye", "9. expression", "10. lhair", "11. eye acc", "12. rhair", "13. mouth", "14. rarity"}
+	var traits = [14]string{"0. legend", "1. background", "2. backpack", "3. sleepbag", "4. pet", "5. body", "6. outfit", "7. ring", "8. expression", "9. lhair", "10. eye acc", "11. rhair", "12. mouth", "13. rarity"}
 	var dnaArr []string
 
 	// 가능한 모든 rarity, trait를 이중배열로 구성
-	var traitsArr [6][15][]string
+	var traitsArr [6][14][]string
 	rarityCounter := make([]int, 6)
 	//조합의 파일명을 넣는 슬라이스
 	images := make([]string, len(traits))
@@ -81,8 +81,8 @@ func main() {
 		for j, trait := range traits {
 			//피부색 + 눈커풀 컨트롤
 			var files []fs.FileInfo
-			if trait == "9. expression" {
-				files, _ = ioutil.ReadDir("./imgs/" + rarity + "/" + trait + "/Blue/")
+			if trait == "8. expression" {
+				files, _ = ioutil.ReadDir("./imgs/" + rarity + "/" + trait + "/Yellow/")
 			} else {
 				files, _ = ioutil.ReadDir("./imgs/" + rarity + "/" + trait)
 			}
@@ -120,12 +120,8 @@ func main() {
 			rand.Seed(time.Now().UnixNano())
 			selecter := rand.Intn(len(traitsArr[raritySelecter][i]))
 			images[i] = traitsArr[raritySelecter][i][selecter]
-			// if i==9 {
-			// 	images[i] =
-			// }
-			// 오른쪽 머리를 왼쪽 머리와 동일하게
-			if i == 12 {
-				images[i] = images[10]
+			if i == 11 {
+				images[i] = images[9]
 			}
 			var dna2 string
 			if selecter < 16 {
@@ -153,23 +149,23 @@ func main() {
 				rarityFull = true
 			}
 		case 1:
-			if rarityCounter[raritySelecter] == 40 {
+			if rarityCounter[raritySelecter] == 100 {
 				rarityFull = true
 			}
 		case 2:
-			if rarityCounter[raritySelecter] == 40 {
+			if rarityCounter[raritySelecter] == 100 {
 				rarityFull = true
 			}
 		case 3:
-			if rarityCounter[raritySelecter] == 40 {
+			if rarityCounter[raritySelecter] == 100 {
 				rarityFull = true
 			}
 		case 4:
-			if rarityCounter[raritySelecter] == 40 {
+			if rarityCounter[raritySelecter] == 100 {
 				rarityFull = true
 			}
 		case 5:
-			if rarityCounter[raritySelecter] == 40 {
+			if rarityCounter[raritySelecter] == 100 {
 				rarityFull = true
 			}
 		}
@@ -207,7 +203,6 @@ func main() {
 			strings.Split(images[11], ".")[0],
 			strings.Split(images[12], ".")[0],
 			strings.Split(images[13], ".")[0],
-			strings.Split(images[14], ".")[0],
 		}
 		csvCell = append(csvCell, csvItem)
 		// fmt.Println("3. csv appended")
@@ -221,7 +216,7 @@ func main() {
 
 		for i, v := range images {
 			//피부색과 일치하는 눈커풀 넣기
-			if traits[i] == "9. expression" {
+			if traits[i] == "8. expression" {
 				decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + strings.Split(images[5], ".")[0] + "/" + v)
 			} else {
 				decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + v)
