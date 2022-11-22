@@ -1,0 +1,300 @@
+0,None,006,005,001,None,Yellow,leaf_suit,None,Beanie,025,Beanie,002,Rookie
+1,None,002,001,003,shell,Yellow,wind_breaker,None,Snapback,024,Snapback,006,Expert
+2,None,007,001,003,Uparupa,Yellow,Padding2,master,005,020,005,007,Master
+3,None,001,001,009,None,Yellow,003,None,Propeller,Sleepy,Propeller,014,Rookie
+4,None,001,004,002,None,Yellow,leaf_suit3,None,Short_curls,013,Short_curls,007,Rookie
+5,None,009,004,003,None,Yellow,Sleeveless2,None,Bobbed-hair2,012,Bobbed-hair2,005,Rookie
+6,None,007,004,002,beluga,Yellow,Padding2,master,005,010,005,005,Master
+7,None,002,004,004,snail,Yellow,animalskin,None,Short_curls,013,Short_curls,004,Expert
+8,None,002,009,003,snail,Yellow,Gong_leather_jacket,Blue+Gold,Short_curls2,Angry,Short_curls2,001,Prime
+9,None,006,002,003,snail,Yellow,Padding,master,007,009,007,009,Master
+10,None,001,001,002,Cat,Yellow,Cloak2,None,Sun_cap,None,Sun_cap,008,Expert
+11,None,001,008,004,octopus,Yellow,006,Blue+Gold,Brown cowboy,Angry,Brown cowboy,008,Prime
+12,None,006,008,roll2,Seahorse,Yellow,002,Blue+Gold,Bobbed-hair_curl3,019,Bobbed-hair_curl3,007,Prime
+13,None,004,006,002,001,Yellow,traditional_clothes,None,Fish2,023,Fish2,006,Junior
+14,None,005,001,006,None,Yellow,leaf_suit2,None,Bobbed-hair2,012,Bobbed-hair2,005,Rookie
+15,None,바다가방,004,003,Seahorse,Yellow,gileysuit,Green+Gold,Brown cowboy,019,Brown cowboy,010,Prime
+16,None,004,004,002,snail,Yellow,animalskin2,master,015,020,015,014,Master
+17,None,004,004,003,Fennec Fox,Yellow,animalskin,None,011,025,011,011,Expert
+18,None,005,003,009,None,Yellow,hood2,None,Beanie2,023,Beanie2,015,Rookie
+19,None,005,002,005,shell,Yellow,Padding,master,009,020,009,004,Master
+20,None,003,002,007,001,Yellow,blue_stripe,None,Fishing_cap,025,Fishing_cap,016,Junior
+21,None,006,006,003,001,Yellow,traditional_clothes,None,Snapback,017,Snapback,004,Junior
+22,None,007,002,005,Seahorse,Yellow,animalskin,master,Ponytail2,010,Ponytail2,001,Master
+23,None,007,004,004,Fennec Fox,Yellow,Padding,master,Ponytail,009,Ponytail,016,Master
+24,None,002,005,004,shell,Yellow,001,Red+Gold,Black cowboy,018,Black cowboy,009,Prime
+25,None,001,004,seabag,octopus,Yellow,006,Yellow+Gold,001,019,001,010,Prime
+26,None,007,006,005,None,Yellow,Sleeveless,None,012,024,012,011,Rookie
+27,None,008,002,005,None,Yellow,hood2,None,Lotus_leaf_hat,None,Lotus_leaf_hat,002,Rookie
+28,None,006,008,roll3,Dog,Yellow,002,Red+Gold,Sun_cap,015,Sun_cap,011,Prime
+29,None,바다가방,010,roll1,beluga,Yellow,001,Yellow+Gold,Apple,None,Apple,012,Prime
+30,None,바다가방,002,roll2,Penguin,Yellow,Gong_leather_jacket,Green+Gold,003,015,003,015,Prime
+31,None,003,004,003,Rabbit,Yellow,Cloak2,None,003,021,003,010,Expert
+32,None,002,004,002,Seahorse,Yellow,004,None,010,005,010,001,Expert
+33,None,007,006,001,001,Yellow,traditional_clothes,None,011,014,011,008,Junior
+34,None,006,001,roll3,Penguin,Yellow,005,Red+Gold,Short_curls2,003,Short_curls2,001,Prime
+35,None,009,001,004,None,Yellow,leaf_suit,None,Snapback,None,Snapback,004,Rookie
+36,None,006,002,002,beluga,Yellow,002,master,Ponytail,022,Ponytail,008,Master
+37,None,004,005,004,Fennec Fox,Yellow,Padding2,master,Bobbed-hair_curl3,022,Bobbed-hair_curl3,007,Master
+38,None,001,004,006,001,Yellow,traditional_clothes2,None,015,021,015,014,Junior
+39,None,007,003,002,beluga,Yellow,Padding2,master,Bobbed-hair_curl2,009,Bobbed-hair_curl2,006,Master
+40,None,004,001,004,Dog,Yellow,001,None,003,014,003,003,Expert
+41,None,007,001,007,001,Yellow,k_Padding2,None,Bobbed-hair,025,Bobbed-hair,011,Junior
+42,None,006,006,008,001,Yellow,004,None,Snapback,Sleepy,Snapback,010,Junior
+43,None,004,005,004,Penguin,Yellow,Cloak,None,009,023,009,007,Expert
+44,None,002,005,005,001,Yellow,002,None,Fish,023,Fish,007,Junior
+45,None,001,010,003,shell,Yellow,Gong_leather_jacket,Red+Gold,Bobbed-hair_curl2,019,Bobbed-hair_curl2,015,Prime
+46,None,007,001,001,beluga,Yellow,001,master,pomade,019,pomade,001,Master
+47,None,001,003,009,None,Yellow,torn_clothes,None,009,Angry,009,014,Rookie
+48,None,006,008,seabag,Seahorse,Yellow,gileysuit,Blue+Gold,Lotus_leaf_hat,025,Lotus_leaf_hat,012,Prime
+49,None,004,001,003,octopus,Yellow,002,master,Fish2,006,Fish2,014,Master
+50,None,004,004,002,Crab,Yellow,003,None,Propeller,023,Propeller,015,Expert
+51,None,003,006,005,None,Yellow,torn_clothes,None,Apple,005,Apple,015,Rookie
+52,None,008,006,009,001,Yellow,005,None,Sun_cap,025,Sun_cap,016,Junior
+53,None,005,002,003,Fennec Fox,Yellow,005,Yellow+Gold,Fish2,None,Fish2,007,Prime
+54,None,001,006,002,None,Yellow,suspenders,None,Propeller,024,Propeller,012,Rookie
+55,None,008,003,007,001,Yellow,naval_uniform,None,Bobbed-hair_curl3,None,Bobbed-hair_curl3,001,Junior
+56,None,001,005,003,None,Yellow,suspenders,None,Lotus_leaf_hat,008,Lotus_leaf_hat,003,Rookie
+57,None,002,003,003,Crab,Yellow,leather-jacket,None,Short_curls,012,Short_curls,014,Expert
+58,None,004,002,004,shell,Yellow,003,None,Propeller,013,Propeller,015,Expert
+59,None,004,004,001,Cat,Yellow,004,None,Apple,023,Apple,008,Expert
+60,None,001,003,001,Penguin,Yellow,Cloak,None,Bobbed-hair_curl3,None,Bobbed-hair_curl3,003,Expert
+61,None,005,010,roll3,Uparupa,Yellow,004,Blue+Gold,Short_curls,Boring,Short_curls,014,Prime
+62,None,006,004,seabag,Penguin,Yellow,001,Yellow+Gold,Bobbed-hair2,None,Bobbed-hair2,007,Prime
+63,None,004,003,004,Penguin,Yellow,animalskin2,master,011,None,011,005,Master
+64,None,바다가방,001,roll1,Penguin,Yellow,005,Red+Gold,Snapback,None,Snapback,007,Prime
+65,None,003,003,003,Fennec Fox,Yellow,Cloak2,None,005,005,005,010,Expert
+66,None,005,006,roll3,Crab,Yellow,001,Yellow+Gold,Cap,None,Cap,001,Prime
+67,None,005,009,roll2,Penguin,Yellow,002,Red+Gold,Fishing_cap,004,Fishing_cap,014,Prime
+68,None,004,002,008,001,Yellow,naval_uniform,None,Ponytail,014,Ponytail,003,Junior
+69,None,004,007,009,001,Yellow,003,None,Beanie,025,Beanie,013,Junior
+70,None,004,002,001,Penguin,Yellow,001,master,005,020,005,002,Master
+71,None,002,009,roll1,Seahorse,Yellow,004,Red+Gold,012,Boring,012,014,Prime
+72,None,006,001,004,001,Yellow,003,None,Lotus_leaf_hat,None,Lotus_leaf_hat,007,Junior
+73,None,006,001,008,None,Yellow,leaf_suit3,None,Bobbed-hair_curl2,021,Bobbed-hair_curl2,005,Rookie
+74,None,006,001,001,snail,Yellow,animalskin2,master,Propeller,020,Propeller,011,Master
+75,None,002,005,004,Seahorse,Yellow,wind_breaker,None,005,012,005,007,Expert
+76,None,004,003,004,None,Yellow,Sleeveless,None,012,017,012,008,Rookie
+77,None,006,001,004,Rabbit,Yellow,006,Purple+Gold,009,015,009,001,Prime
+78,None,001,005,006,None,Yellow,hood2,None,009,021,009,011,Rookie
+79,None,004,002,002,None,Yellow,Sleeveless,None,Straw_hat,Angry,Straw_hat,012,Rookie
+80,None,005,010,003,octopus,Yellow,002,Blue+Gold,015,None,015,010,Prime
+81,None,001,010,seabag,octopus,Yellow,006,Purple+Gold,010,004,010,006,Prime
+82,None,005,007,004,None,Yellow,leaf_suit,None,007,013,007,004,Rookie
+83,None,004,005,004,Cat,Yellow,004,None,004,023,004,001,Expert
+84,None,008,005,009,None,Yellow,Sleeveless2,None,clam_bite_hair,Sleepy,clam_bite_hair,009,Rookie
+85,None,004,007,001,001,Yellow,004,None,Ponytail,Sleepy,Ponytail,012,Junior
+86,None,005,002,seabag,Cat,Yellow,006,Red+Gold,Traditional_hat,015,Traditional_hat,015,Prime
+87,None,002,003,002,shell,Yellow,001,None,Black cowboy,023,Black cowboy,010,Expert
+88,None,005,008,roll1,Fennec Fox,Yellow,005,Yellow+Gold,003,Angry,003,006,Prime
+89,None,002,006,roll1,Cat,Yellow,003,Yellow+Gold,Apple,025,Apple,016,Prime
+90,None,006,005,004,shell,Yellow,002,master,011,Boring,011,010,Master
+91,None,009,006,009,001,Yellow,k_Padding1,None,015,021,015,010,Junior
+92,None,008,007,003,None,Yellow,002,None,clam_bite_hair,017,clam_bite_hair,008,Rookie
+93,None,007,003,002,snail,Yellow,Padding2,master,Propeller,Angry,Propeller,003,Master
+94,None,007,001,003,Uparupa,Yellow,animalskin2,master,011,Angry,011,015,Master
+95,None,004,001,001,Penguin,Yellow,leather-jacket,master,011,None,011,016,Master
+96,None,005,005,007,001,Yellow,001,None,002,014,002,013,Junior
+97,None,006,003,005,None,Yellow,hood1,None,Fish2,023,Fish2,013,Rookie
+98,None,005,003,003,001,Yellow,green_sweatsuit,None,pomade,Angry,pomade,011,Junior
+99,None,003,003,002,None,Yellow,003,None,Short_curls2,024,Short_curls2,008,Rookie
+100,None,007,002,008,001,Yellow,002,None,Cap,Angry,Cap,009,Junior
+101,None,001,004,002,Rabbit,Yellow,002,None,Ponytail2,014,Ponytail2,009,Expert
+102,None,008,006,003,None,Yellow,leaf_suit2,None,010,008,010,013,Rookie
+103,None,005,003,002,shell,Yellow,003,master,Traditional_hat,020,Traditional_hat,007,Master
+104,None,001,001,006,001,Yellow,Cloak,None,Fish2,Angry,Fish2,002,Junior
+105,None,001,004,002,Uparupa,Yellow,002,None,Brown cowboy,023,Brown cowboy,012,Expert
+106,None,006,006,004,Seahorse,Yellow,003,Purple+Gold,005,Boring,005,014,Prime
+107,None,004,001,005,None,Yellow,Sleeveless,None,Lotus_leaf_hat,008,Lotus_leaf_hat,007,Rookie
+108,None,003,003,009,None,Yellow,hood2,None,pomade,008,pomade,015,Rookie
+109,None,005,001,003,Seahorse,Yellow,Padding,master,Cap,010,Cap,006,Master
+110,None,007,005,006,None,Yellow,Sleeveless2,None,003,Angry,003,005,Rookie
+111,None,005,008,seabag,Rabbit,Yellow,003,Red+Gold,015,Angry,015,006,Prime
+112,None,004,005,003,Penguin,Yellow,Padding,master,003,Sleepy,003,009,Master
+113,None,002,003,001,Penguin,Yellow,animalskin,None,Beanie2,014,Beanie2,013,Expert
+114,None,004,005,003,001,Yellow,naval_uniform,None,Bobbed-hair_curl,012,Bobbed-hair_curl,010,Junior
+115,None,004,002,002,Fennec Fox,Yellow,001,master,001,010,001,005,Master
+116,None,007,002,008,001,Yellow,001,None,009,014,009,016,Junior
+117,None,바다가방,009,seabag,snail,Yellow,003,Yellow+Gold,Bobbed-hair_curl2,025,Bobbed-hair_curl2,003,Prime
+118,None,001,002,001,octopus,Yellow,animalskin2,None,Beanie2,013,Beanie2,012,Expert
+119,None,005,002,002,octopus,Yellow,animalskin2,master,001,022,001,010,Master
+120,None,003,004,002,Cat,Yellow,Cloak,None,Apple,Angry,Apple,007,Expert
+121,None,007,001,005,001,Yellow,005,None,Bobbed-hair,017,Bobbed-hair,003,Junior
+122,None,바다가방,010,004,Penguin,Yellow,002,Green+Gold,010,017,010,001,Prime
+123,None,003,002,001,Penguin,Yellow,Cloak,None,Black cowboy,012,Black cowboy,005,Expert
+124,None,006,005,003,octopus,Yellow,002,master,003,Sleepy,003,001,Master
+125,None,001,010,roll1,Dog,Yellow,001,Purple+Gold,Bobbed-hair2,Angry,Bobbed-hair2,008,Prime
+126,None,001,004,006,001,Yellow,traditional_clothes,None,Lotus_leaf_hat,021,Lotus_leaf_hat,010,Junior
+127,None,007,001,002,snail,Yellow,001,master,002,None,002,009,Master
+128,None,004,006,004,None,Yellow,hood2,None,pomade,Boring,pomade,001,Rookie
+129,None,001,001,004,Uparupa,Yellow,004,None,004,013,004,012,Expert
+130,None,002,003,004,Seahorse,Yellow,Cloak2,None,005,Boring,005,011,Expert
+131,None,004,002,004,None,Yellow,Sleeveless,None,pomade2,Sleepy,pomade2,008,Rookie
+132,None,002,004,006,None,Yellow,Sleeveless2,None,001,014,001,009,Rookie
+133,None,바다가방,006,roll2,Seahorse,Yellow,gileysuit,Green+Gold,Ponytail2,018,Ponytail2,014,Prime
+134,None,002,004,001,octopus,Yellow,001,None,Straw_hat,021,Straw_hat,016,Expert
+135,None,009,007,004,None,Yellow,002,None,Bread_hat,Angry,Bread_hat,002,Rookie
+136,None,004,003,001,Fennec Fox,Yellow,001,master,pomade2,Sleepy,pomade2,016,Master
+137,None,004,003,004,Fennec Fox,Yellow,wind_breaker,None,Short_curls2,013,Short_curls2,010,Expert
+138,None,005,002,004,Cat,Yellow,001,master,Short_curls2,Sleepy,Short_curls2,001,Master
+139,None,001,001,005,None,Yellow,Sleeveless2,None,pomade2,014,pomade2,013,Rookie
+140,None,바다가방,004,003,snail,Yellow,gileysuit,Purple+Gold,Fishing_cap,003,Fishing_cap,009,Prime
+141,None,004,001,008,001,Yellow,traditional_clothes,None,Ponytail,005,Ponytail,007,Junior
+142,None,008,003,009,001,Yellow,traditional_clothes,None,007,None,007,012,Junior
+143,None,002,003,002,None,Yellow,suspenders,None,Fish2,008,Fish2,016,Rookie
+144,None,바다가방,004,004,shell,Yellow,003,Red+Gold,002,017,002,014,Prime
+145,None,004,005,005,snail,Yellow,leather-jacket,master,Bobbed-hair_curl3,010,Bobbed-hair_curl3,004,Master
+146,None,006,001,003,Dog,Yellow,001,master,010,Boring,010,010,Master
+147,None,004,005,005,001,Yellow,k_Padding2,None,Fishing_cap,014,Fishing_cap,009,Junior
+148,None,006,001,001,Dog,Yellow,animalskin2,master,Bobbed-hair2,022,Bobbed-hair2,008,Master
+149,None,009,006,005,001,Yellow,003,None,Beanie,None,Beanie,007,Junior
+150,None,005,003,006,None,Yellow,leaf_suit2,None,006,023,006,013,Rookie
+151,None,005,001,001,beluga,Yellow,Padding2,master,Beanie2,Sleepy,Beanie2,006,Master
+152,None,005,004,004,Rabbit,Yellow,001,master,Fishing_cap,019,Fishing_cap,009,Master
+153,None,005,002,002,Rabbit,Yellow,animalskin,master,002,Angry,002,011,Master
+154,None,001,004,003,Penguin,Yellow,006,Purple+Gold,Short_curls2,017,Short_curls2,002,Prime
+155,None,005,003,001,Penguin,Yellow,002,master,Ponytail,020,Ponytail,001,Master
+156,None,005,001,001,None,Yellow,leaf_suit2,None,Safari,005,Safari,009,Rookie
+157,None,007,004,003,Fennec Fox,Yellow,animalskin2,master,Short_curls2,007,Short_curls2,003,Master
+158,None,004,005,004,Rabbit,Yellow,Padding,master,015,010,015,013,Master
+159,None,008,007,004,001,Yellow,Cloak,None,Brown cowboy,None,Brown cowboy,004,Junior
+160,None,007,003,005,Seahorse,Yellow,003,master,010,022,010,015,Master
+161,None,004,005,001,beluga,Yellow,leather-jacket,master,Ponytail,006,Ponytail,013,Master
+162,None,004,005,004,Fennec Fox,Yellow,animalskin,None,009,Sleepy,009,011,Expert
+163,None,006,005,001,Uparupa,Yellow,leather-jacket,master,Bobbed-hair,009,Bobbed-hair,007,Master
+164,None,001,003,002,Crab,Yellow,001,None,011,Boring,011,004,Expert
+165,None,005,004,005,octopus,Yellow,animalskin2,master,Bobbed-hair_curl3,007,Bobbed-hair_curl3,004,Master
+166,None,006,001,004,Dog,Yellow,animalskin,master,Ponytail2,Boring,Ponytail2,006,Master
+167,None,003,006,001,001,Yellow,green_sweatsuit,None,007,005,007,007,Junior
+168,None,001,004,003,Rabbit,Yellow,leather-jacket,None,Ponytail,025,Ponytail,014,Expert
+169,None,004,004,004,Uparupa,Yellow,wind_breaker,None,Fishing_cap,025,Fishing_cap,015,Expert
+170,None,005,005,004,001,Yellow,blue_stripe,None,002,013,002,001,Junior
+171,None,바다가방,010,roll1,Rabbit,Yellow,002,Green+Gold,Bobbed-hair_curl,003,Bobbed-hair_curl,002,Prime
+172,None,003,004,004,Dog,Yellow,leather-jacket,None,007,017,007,013,Expert
+173,None,001,005,001,None,Yellow,003,None,Apple,013,Apple,002,Rookie
+174,None,004,003,003,Seahorse,Yellow,animalskin,None,Ponytail,Angry,Ponytail,010,Expert
+175,None,005,001,005,None,Yellow,002,None,009,008,009,005,Rookie
+176,None,바다가방,009,roll2,beluga,Yellow,006,Purple+Gold,Fish2,004,Fish2,014,Prime
+177,None,006,005,002,Crab,Yellow,animalskin,master,Straw_hat,020,Straw_hat,006,Master
+178,None,006,004,002,Dog,Yellow,Padding,master,Sun_cap,020,Sun_cap,005,Master
+179,None,005,001,roll3,snail,Yellow,005,Green+Gold,Fish,Boring,Fish,007,Prime
+180,None,003,001,002,001,Yellow,006,None,Ponytail2,017,Ponytail2,007,Junior
+181,None,001,004,006,None,Yellow,Sleeveless,None,015,012,015,001,Rookie
+182,None,004,003,001,None,Yellow,002,None,005,Sleepy,005,011,Rookie
+183,None,005,005,001,Penguin,Yellow,Padding2,master,clam_bite_hair,Angry,clam_bite_hair,009,Master
+184,None,004,005,004,shell,Yellow,004,None,Bobbed-hair2,008,Bobbed-hair2,003,Expert
+185,None,005,001,001,octopus,Yellow,003,master,Short_curls2,None,Short_curls2,009,Master
+186,None,002,003,005,None,Yellow,001,None,Captain,024,Captain,013,Rookie
+187,None,003,004,003,Cat,Yellow,003,None,004,017,004,011,Expert
+188,None,009,001,003,None,Yellow,suspenders,None,Bobbed-hair_curl3,021,Bobbed-hair_curl3,002,Rookie
+189,None,001,005,004,Crab,Yellow,006,Red+Gold,Beanie,004,Beanie,015,Prime
+190,None,006,005,roll3,snail,Yellow,Gong_leather_jacket,Red+Gold,010,025,010,009,Prime
+191,None,006,007,002,001,Yellow,green_sweatsuit,None,012,021,012,010,Junior
+192,None,009,003,008,001,Yellow,k_Padding1,None,Short_curls,None,Short_curls,007,Junior
+193,None,006,002,003,Fennec Fox,Yellow,002,master,clam_bite_hair,010,clam_bite_hair,003,Master
+194,None,002,005,001,Fennec Fox,Yellow,animalskin,None,Short_curls2,Sleepy,Short_curls2,013,Expert
+195,None,007,003,005,Dog,Yellow,003,master,010,None,010,007,Master
+196,None,008,002,003,001,Yellow,006,None,Cap,005,Cap,016,Junior
+197,None,004,001,002,beluga,Yellow,Padding2,master,001,007,001,008,Master
+198,None,004,002,002,Fennec Fox,Yellow,leather-jacket,master,006,Angry,006,011,Master
+199,None,007,005,006,None,Yellow,leaf_suit3,None,Apple,005,Apple,012,Rookie
+200,None,003,004,006,001,Yellow,004,None,Beanie,024,Beanie,013,Junior
+201,None,008,001,009,None,Yellow,leaf_suit2,None,Captain,Sleepy,Captain,016,Rookie
+202,None,004,004,002,Rabbit,Yellow,002,master,Straw_hat,010,Straw_hat,005,Master
+203,None,003,005,001,Penguin,Yellow,wind_breaker,None,Sun_cap,025,Sun_cap,001,Expert
+204,None,005,007,001,None,Yellow,Sleeveless2,None,Fish,Boring,Fish,010,Rookie
+205,None,004,004,003,shell,Yellow,animalskin,None,Black cowboy,014,Black cowboy,002,Expert
+206,None,005,001,005,Fennec Fox,Yellow,Padding,master,Fish,020,Fish,013,Master
+207,None,003,007,009,None,Yellow,leaf_suit2,None,Propeller,013,Propeller,013,Rookie
+208,None,002,009,004,Crab,Yellow,002,Green+Gold,Straw_hat,017,Straw_hat,004,Prime
+209,None,002,010,004,Rabbit,Yellow,003,Purple+Gold,Bobbed-hair2,Boring,Bobbed-hair2,006,Prime
+210,None,008,004,005,001,Yellow,006,None,004,Angry,004,003,Junior
+211,None,바다가방,006,roll3,Crab,Yellow,003,Blue+Gold,Captain,019,Captain,002,Prime
+212,None,001,004,001,beluga,Yellow,animalskin,None,clam_bite_hair,023,clam_bite_hair,008,Expert
+213,None,001,007,006,001,Yellow,traditional_clothes,None,Captain,012,Captain,002,Junior
+214,None,001,002,002,Seahorse,Yellow,Cloak,None,Bobbed-hair_curl2,013,Bobbed-hair_curl2,001,Expert
+215,None,004,005,003,001,Yellow,004,None,Fish2,014,Fish2,003,Junior
+216,None,004,001,006,None,Yellow,leaf_suit2,None,pomade2,012,pomade2,007,Rookie
+217,None,006,010,003,Crab,Yellow,Gong_leather_jacket,Red+Gold,Traditional_hat,018,Traditional_hat,015,Prime
+218,None,009,005,008,001,Yellow,002,None,002,008,002,001,Junior
+219,None,004,006,007,None,Yellow,leaf_suit2,None,Traditional_hat,005,Traditional_hat,008,Rookie
+220,None,009,007,005,001,Yellow,blue_stripe,None,002,012,002,006,Junior
+221,None,002,005,009,001,Yellow,Cloak2,None,Straw_hat,Sleepy,Straw_hat,008,Junior
+222,None,001,003,003,Uparupa,Yellow,Gong_leather_jacket,Green+Gold,001,015,001,016,Prime
+223,None,005,005,002,001,Yellow,k_Padding2,None,Short_curls2,012,Short_curls2,016,Junior
+224,None,002,001,004,snail,Yellow,002,None,Fishing_cap,024,Fishing_cap,010,Expert
+225,None,007,005,004,Uparupa,Yellow,003,master,009,007,009,011,Master
+226,None,006,004,004,Seahorse,Yellow,001,master,Snapback,Boring,Snapback,005,Master
+227,None,005,003,001,Penguin,Yellow,001,master,Bread_hat,Sleepy,Bread_hat,009,Master
+228,None,004,003,003,octopus,Yellow,003,master,Safari,007,Safari,004,Master
+229,None,009,007,003,001,Yellow,001,None,Bobbed-hair_curl,017,Bobbed-hair_curl,007,Junior
+230,None,005,005,003,Rabbit,Yellow,animalskin2,master,Black cowboy,007,Black cowboy,010,Master
+231,None,005,003,005,Cat,Yellow,leather-jacket,master,009,Boring,009,010,Master
+232,None,007,004,003,snail,Yellow,animalskin2,master,Sun_cap,007,Sun_cap,008,Master
+233,None,006,002,004,Seahorse,Yellow,006,Blue+Gold,Lotus_leaf_hat,019,Lotus_leaf_hat,015,Prime
+234,None,004,002,001,Cat,Yellow,Padding2,master,Lotus_leaf_hat,020,Lotus_leaf_hat,003,Master
+235,None,004,001,009,None,Yellow,leaf_suit3,None,006,023,006,002,Rookie
+236,None,001,004,003,beluga,Yellow,wind_breaker2,None,Bobbed-hair_curl2,012,Bobbed-hair_curl2,006,Expert
+237,None,009,002,005,001,Yellow,001,None,Beanie,025,Beanie,001,Junior
+238,None,003,005,002,None,Yellow,002,None,003,012,003,006,Rookie
+239,None,003,005,003,shell,Yellow,animalskin,None,Bobbed-hair_curl2,017,Bobbed-hair_curl2,002,Expert
+240,None,007,004,003,001,Yellow,002,None,Bobbed-hair2,Boring,Bobbed-hair2,003,Junior
+241,None,바다가방,006,roll2,Rabbit,Yellow,006,Blue+Gold,pomade2,None,pomade2,015,Prime
+242,None,007,007,009,001,Yellow,traditional_clothes,None,Brown cowboy,023,Brown cowboy,001,Junior
+243,None,006,001,006,001,Yellow,005,None,Bobbed-hair2,Angry,Bobbed-hair2,016,Junior
+244,None,009,007,005,001,Yellow,traditional_clothes,None,Fishing_cap,Sleepy,Fishing_cap,011,Junior
+245,None,001,009,004,Fennec Fox,Yellow,Gong_leather_jacket,Purple+Gold,Ponytail,Boring,Ponytail,011,Prime
+246,None,004,005,004,snail,Yellow,wind_breaker2,None,Bobbed-hair2,023,Bobbed-hair2,014,Expert
+247,None,004,006,002,None,Yellow,Sleeveless2,None,Fish2,017,Fish2,008,Rookie
+248,None,005,007,007,None,Yellow,001,None,011,023,011,004,Rookie
+249,None,003,003,002,Seahorse,Yellow,wind_breaker,None,Safari,008,Safari,002,Expert
+250,None,001,003,roll2,Crab,Yellow,002,Green+Gold,006,004,006,012,Prime
+251,None,006,005,004,beluga,Yellow,005,Red+Gold,Lotus_leaf_hat,025,Lotus_leaf_hat,001,Prime
+252,None,004,001,003,snail,Yellow,wind_breaker,None,Bobbed-hair,023,Bobbed-hair,015,Expert
+253,None,003,002,004,Fennec Fox,Yellow,001,None,001,Angry,001,015,Expert
+254,None,001,002,003,beluga,Yellow,002,None,Fish,Sleepy,Fish,012,Expert
+255,None,007,003,004,None,Yellow,leaf_suit2,None,Traditional_hat,014,Traditional_hat,012,Rookie
+256,None,001,006,roll2,Dog,Yellow,Gong_leather_jacket,Purple+Gold,Propeller,015,Propeller,007,Prime
+257,None,002,002,roll3,Dog,Yellow,004,Purple+Gold,Captain,016,Captain,005,Prime
+258,None,바다가방,005,004,Rabbit,Yellow,006,Green+Gold,Captain,Angry,Captain,002,Prime
+259,None,003,002,003,None,Yellow,leaf_suit,None,Lotus_leaf_hat,None,Lotus_leaf_hat,005,Rookie
+260,None,002,003,008,001,Yellow,Cloak,None,Apple,005,Apple,013,Junior
+261,None,008,004,001,001,Yellow,003,None,010,Boring,010,011,Junior
+262,None,바다가방,003,roll2,shell,Yellow,006,Yellow+Gold,Traditional_hat,Boring,Traditional_hat,005,Prime
+263,None,004,004,005,None,Yellow,hood1,None,Straw_hat,Angry,Straw_hat,015,Rookie
+264,None,001,003,roll1,Penguin,Yellow,005,Green+Gold,002,Angry,002,009,Prime
+265,None,002,001,003,Rabbit,Yellow,leather-jacket,None,Bobbed-hair,None,Bobbed-hair,002,Expert
+266,None,004,004,004,Fennec Fox,Yellow,001,None,Bobbed-hair2,024,Bobbed-hair2,006,Expert
+267,None,004,003,003,None,Yellow,suspenders,None,Bobbed-hair,005,Bobbed-hair,015,Rookie
+268,None,바다가방,002,004,Fennec Fox,Yellow,gileysuit,Purple+Gold,007,025,007,016,Prime
+269,None,002,001,004,Seahorse,Yellow,003,None,Ponytail,017,Ponytail,015,Expert
+270,None,001,005,seabag,Penguin,Yellow,001,Blue+Gold,004,016,004,009,Prime
+271,None,004,002,008,None,Yellow,leaf_suit,None,Bobbed-hair_curl3,021,Bobbed-hair_curl3,013,Rookie
+272,None,007,005,009,None,Yellow,Sleeveless,None,Bobbed-hair,014,Bobbed-hair,015,Rookie
+273,None,004,003,002,Seahorse,Yellow,Cloak,None,Black cowboy,021,Black cowboy,014,Expert
+274,None,바다가방,009,roll1,Uparupa,Yellow,gileysuit,Green+Gold,pomade2,025,pomade2,016,Prime
+275,None,001,002,005,001,Yellow,traditional_clothes,None,Captain,008,Captain,001,Junior
+276,None,006,010,roll1,snail,Yellow,Gong_leather_jacket,Green+Gold,Bread_hat,018,Bread_hat,002,Prime
+277,None,004,002,004,Rabbit,Yellow,Cloak,None,010,013,010,003,Expert
+278,None,006,010,roll2,Crab,Yellow,003,Blue+Gold,001,Angry,001,009,Prime
+279,None,003,004,003,shell,Yellow,animalskin,None,pomade2,021,pomade2,006,Expert
+280,None,005,006,007,001,Yellow,Cloak2,None,Apple,Angry,Apple,004,Junior
+281,None,001,010,004,Rabbit,Yellow,002,Red+Gold,002,004,002,013,Prime
+282,None,005,005,005,001,Yellow,004,None,Brown cowboy,013,Brown cowboy,008,Junior
+283,None,007,005,006,001,Yellow,k_Padding1,None,Bobbed-hair_curl3,024,Bobbed-hair_curl3,016,Junior
+284,None,001,003,004,None,Yellow,Sleeveless,None,007,012,007,005,Rookie
+285,None,003,001,003,Penguin,Yellow,001,None,Bobbed-hair_curl3,005,Bobbed-hair_curl3,006,Expert
+286,None,001,005,002,beluga,Yellow,wind_breaker2,None,Propeller,017,Propeller,008,Expert
+287,None,005,001,009,001,Yellow,traditional_clothes,None,010,025,010,010,Junior
+288,None,006,002,002,None,Yellow,leaf_suit,None,Bobbed-hair_curl,Sleepy,Bobbed-hair_curl,015,Rookie
+289,None,001,006,009,None,Yellow,Sleeveless,None,Sun_cap,012,Sun_cap,011,Rookie
+290,None,009,005,003,001,Yellow,k_Padding1,None,Traditional_hat,021,Traditional_hat,008,Junior
+291,None,009,007,007,None,Yellow,leaf_suit2,None,009,013,009,005,Rookie
+292,None,001,007,009,001,Yellow,k_Padding2,None,012,005,012,004,Junior
+293,None,003,001,001,001,Yellow,001,None,Lotus_leaf_hat,008,Lotus_leaf_hat,007,Junior
+294,None,003,002,003,snail,Yellow,001,None,004,017,004,002,Expert
+295,None,005,001,007,001,Yellow,blue_stripe,None,001,021,001,012,Junior
+296,None,005,002,007,001,Yellow,003,None,Ponytail,Angry,Ponytail,015,Junior
+297,None,004,003,003,snail,Yellow,003,None,Fish,012,Fish,010,Expert
+298,None,002,003,003,octopus,Yellow,004,None,Bobbed-hair,None,Bobbed-hair,011,Expert
+299,None,003,005,003,shell,Yellow,004,None,Beanie,None,Beanie,006,Expert
