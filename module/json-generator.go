@@ -15,7 +15,7 @@ type Metadata struct {
 	Description string       `json:"description"`
 	Image       string       `json:"image"`
 	Attributes  []Attributes `json:"attributes"`
-	Properties  Properties   `json:"properties"`
+	// Properties  Properties   `json:"properties"`
 }
 
 type Attributes struct {
@@ -37,11 +37,11 @@ func Json_generator(traitArr []string, num int) {
 
 	// json
 	var result Metadata
-	result.Attributes = make([]Attributes, 14)
-	result.Properties.Files = make([]Files, 1)
+	result.Attributes = make([]Attributes, 11)
+	// result.Properties.Files = make([]Files, 1)
 
-	result.Symbol = "HUHU"
-	result.Description = "HUHU and friends"
+	result.Symbol = "WCREW"
+	result.Description = "Join the Whowho Crew!\nExplore the sea of virtual assets with Whowho Crew!"
 	result.Attributes[0].Trait_type = "legend"
 	result.Attributes[0].Value = strings.Split(traitArr[0], ".")[0]
 	result.Attributes[1].Trait_type = "background"
@@ -52,28 +52,27 @@ func Json_generator(traitArr []string, num int) {
 	result.Attributes[3].Value = strings.Split(traitArr[3], ".")[0]
 	result.Attributes[4].Trait_type = "pet"
 	result.Attributes[4].Value = strings.Split(traitArr[4], ".")[0]
-	result.Attributes[5].Trait_type = "body"
-	result.Attributes[5].Value = strings.Split(traitArr[5], ".")[0]
-	result.Attributes[6].Trait_type = "outfit"
-	result.Attributes[6].Value = strings.Split(traitArr[6], ".")[0]
-	result.Attributes[7].Trait_type = "ring"
-	result.Attributes[7].Value = strings.Split(traitArr[7], ".")[0]
-	result.Attributes[8].Trait_type = "hair"
-	result.Attributes[8].Value = strings.Split(traitArr[8], ".")[0]
-	result.Attributes[9].Trait_type = "eye"
-	result.Attributes[9].Value = strings.Split(traitArr[9], ".")[0]
-	result.Attributes[10].Trait_type = "mouth"
-	result.Attributes[10].Value = strings.Split(traitArr[11], ".")[0]
-	result.Attributes[11].Trait_type = "rarity"
-	result.Attributes[11].Value = strings.Split(traitArr[12], ".")[0]
+	result.Attributes[5].Trait_type = "outfit"
+	result.Attributes[5].Value = strings.Split(traitArr[6], ".")[0]
+	result.Attributes[6].Trait_type = "ring"
+	result.Attributes[6].Value = strings.Split(traitArr[7], ".")[0]
+	result.Attributes[7].Trait_type = "head"
+	result.Attributes[7].Value = strings.Split(traitArr[8], ".")[0]
+	result.Attributes[8].Trait_type = "eye"
+	result.Attributes[8].Value = strings.Split(traitArr[9], ".")[0]
+	result.Attributes[9].Trait_type = "mouth"
+	result.Attributes[9].Value = strings.Split(traitArr[11], ".")[0]
+	result.Attributes[10].Trait_type = "rarity"
+	result.Attributes[10].Value = strings.Split(traitArr[12], ".")[0]
 
-	result.Properties.Files[0].Type = "image/png"
-	result.Name = "HUHU#" + strconv.Itoa(num)
-	result.Image = strconv.Itoa(num) + ".png"
-	result.Properties.Files[0].Uri = strconv.Itoa(num) + ".png"
+	// result.Properties.Files[0].Type = "image/png"
+	result.Name = "Whowho Crew#" + strconv.Itoa(num)
+	result.Image = "https://kvada.vpay.co.kr/nft/Whowhocrew/" + strconv.Itoa(num) + "/imgae.png"
+	// result.Properties.Files[0].Uri = strconv.Itoa(num) + ".png"
 	doc, _ := json.Marshal(result)
 
-	err2 := ioutil.WriteFile("./result/"+strconv.Itoa(num)+"/meta.json", doc, os.FileMode(0644))
+	// err2 := ioutil.WriteFile("./result/"+strconv.Itoa(num)+"/meta.json", doc, os.FileMode(0644))
+	err2 := ioutil.WriteFile("./result/"+strconv.Itoa(num)+".json", doc, os.FileMode(0644))
 
 	if err2 != nil {
 		fmt.Println(err2)
