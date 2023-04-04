@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"encoding/csv"
 	"fmt"
+	"github.com/Todari/go-generative-pfp/module"
 	"image"
 	"image/draw"
 	"image/png"
@@ -12,13 +13,33 @@ import (
 	"log"
 	"math/rand"
 	"os"
-	"sort"
 	"strconv"
 	"strings"
 	"time"
-
-	"github.com/Todari/go-generative-pfp/module"
 )
+
+type Metadata struct {
+	Name        string       `json:"name"`
+	Symbol      string       `json:"symbol"`
+	Description string       `json:"description"`
+	Image       string       `json:"image"`
+	Attributes  []Attributes `json:"attributes"`
+	// Properties  Properties   `json:"properties"`
+}
+
+type Attributes struct {
+	Trait_type string `json:"trait_type"`
+	Value      string `json:"value"`
+}
+
+type Properties struct {
+	Files []Files `json:"files"`
+}
+
+type Files struct {
+	Uri  string `json:"uri"`
+	Type string `json:"type"`
+}
 
 func reset() {
 	if !os.IsExist(os.RemoveAll("./result/")) {
@@ -44,18 +65,19 @@ func openAndDecode(imgPath string) image.Image {
 	return decoded
 }
 
-type Trait struct {
-	Rarity string
-	Path   string
-	Name   string
-	Weight int
-	Group  string
-}
-
 func main() {
 
 	doReset := true
-	totalNum := 300
+	totalNum := 10000
+	traitNum := [6]int{10, 100, 700, 1200, 3000, 4990}
+	traitNumSum := 0
+	for _, v := range traitNum {
+		traitNumSum += v
+	}
+
+	if totalNum != traitNumSum {
+		log.Fatalf("totalNum doesn't match with sum of traitNum")
+	}
 
 	if doReset {
 		reset()
@@ -71,11 +93,23 @@ func main() {
 	rarityCounter := make([]int, 6)
 	//조합의 파일명을 넣는 슬라이스
 	images := make([]string, len(traits))
-	dnaExist := false
-	rarityFull := false
+	var imagesArr [][]string
 	w := bufio.NewWriter(os.Stdout)
 	defer w.Flush()
 
+	var raritySelecterArr []int
+	for j, v := range traitNum {
+		for i := 0; i < v; i++ {
+			raritySelecterArr = append(raritySelecterArr, j)
+		}
+	}
+
+	rand.Seed(time.Now().UnixNano())
+	rand.Shuffle(totalNum, func(i int, j int) {
+		raritySelecterArr[i], raritySelecterArr[j] = raritySelecterArr[j], raritySelecterArr[i]
+	})
+
+	fmt.Print(raritySelecterArr)
 	for i, rarity := range rarities {
 
 		for j, trait := range traits {
@@ -106,20 +140,21 @@ func main() {
 	}
 	csvw := csv.NewWriter(bufio.NewWriter((file)))
 	var csvCell [][]string
+	csvCategory := []string{
+		"ID", "legend", "background", "backpack", "sleepbag", "pet", "outfit", "ring", "head", "eye", "mouth", "rarity",
+	}
+	csvCell = append(csvCell, csvCategory)
 	defer csvw.Flush()
 
-	for i := 0; i < totalNum; i++ {
-		var dna string
-		var raritySelecter int
-		dnaExist = false
-		rarityFull = false
-		rand.Seed(time.Now().UnixNano())
-		raritySelecter = rand.Intn(6)
+	for tokenId, rarityIndex := range raritySelecterArr {
 
-		for i, _ := range traitsArr[raritySelecter] {
+	resetTraits:
+		dnaExist := false
+		var dna string
+		for i, _ := range traitsArr[rarityIndex] {
 			rand.Seed(time.Now().UnixNano())
-			selecter := rand.Intn(len(traitsArr[raritySelecter][i]))
-			images[i] = traitsArr[raritySelecter][i][selecter]
+			selecter := rand.Intn(len(traitsArr[rarityIndex][i]))
+			images[i] = traitsArr[rarityIndex][i][selecter]
 			if i == 10 {
 				images[i] = images[8]
 			}
@@ -131,85 +166,46 @@ func main() {
 			}
 			dna += dna2
 		}
-		dna = dna[0:len(dna)-2] + strconv.Itoa(raritySelecter)
+		dna = dna[0:len(dna)-2] + strconv.Itoa(rarityIndex)
 		for _, v := range dnaArr {
 			if dna == v {
 				dnaExist = true
 				break
 			}
 		}
-		fmt.Println(images)
-
-		// fmt.Println("1. DNA Created")
-
-		//레어리티별 최대 갯수 설정
-		switch raritySelecter {
-		case 0:
-			if rarityCounter[raritySelecter] == 0 {
-				rarityFull = true
-			}
-		case 1:
-			if rarityCounter[raritySelecter] == 60 {
-				rarityFull = true
-			}
-		case 2:
-			if rarityCounter[raritySelecter] == 60 {
-				rarityFull = true
-			}
-		case 3:
-			if rarityCounter[raritySelecter] == 60 {
-				rarityFull = true
-			}
-		case 4:
-			if rarityCounter[raritySelecter] == 60 {
-				rarityFull = true
-			}
-		case 5:
-			if rarityCounter[raritySelecter] == 60 {
-				rarityFull = true
-			}
-		}
-
-		if rarityFull {
-			fmt.Println("RARITY FULL")
-			i--
-			continue
-		} else {
-			rarityCounter[raritySelecter]++
-		}
 
 		if dnaExist {
 			fmt.Println("DNA EXIST")
-			i--
-			continue
+			goto resetTraits
 		}
-		// fmt.Println("2. DNA, rarity checked")
-		// fmt.Print(rarityCounter)
+
+		fmt.Println(images)
+		imagesArr = append(imagesArr, images)
+
+		rarityCounter[rarityIndex]++
+		fmt.Print(rarityCounter)
 
 		//csv 배열에 push
 		csvItem := []string{
-			strconv.Itoa(i),
+			strconv.Itoa(tokenId),
 			strings.Split(images[0], ".")[0],
-			strings.Split(images[2], ".")[0],
 			strings.Split(images[1], ".")[0],
+			strings.Split(images[2], ".")[0],
 			strings.Split(images[3], ".")[0],
 			strings.Split(images[4], ".")[0],
-			strings.Split(images[5], ".")[0],
+			// strings.Split(images[5], ".")[0],
 			strings.Split(images[6], ".")[0],
 			strings.Split(images[7], ".")[0],
 			strings.Split(images[8], ".")[0],
 			strings.Split(images[9], ".")[0],
-			strings.Split(images[10], ".")[0],
+			// strings.Split(images[10], ".")[0],
 			strings.Split(images[11], ".")[0],
 			strings.Split(images[12], ".")[0],
 		}
 		csvCell = append(csvCell, csvItem)
-		// fmt.Println("3. csv appended")
 
 		dnaArr = append(dnaArr, dna)
-		fmt.Println("ID: ", i, "DNA : ", dna)
-
-		fmt.Println(images)
+		fmt.Println("\tID: ", tokenId, "\tDNA : ", dna)
 
 		decodedImages := make([]image.Image, len(images))
 
@@ -218,42 +214,36 @@ func main() {
 			// if traits[i] == "8. expression" {
 			// 	decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + strings.Split(images[5], ".")[0] + "/" + v)
 			// } else {
-			decodedImages[i] = openAndDecode("./imgs/" + rarities[raritySelecter] + "/" + traits[i] + "/" + v)
+			decodedImages[i] = openAndDecode("./imgs/" + rarities[rarityIndex] + "/" + traits[i] + "/" + v)
 			// }
 		}
-		// fmt.Println("4. img decoded")
 
 		bounds := decodedImages[0].Bounds()
 		newImage := image.NewRGBA(bounds)
-
 		for _, img := range decodedImages {
 			draw.Draw(newImage, img.Bounds(), img, image.ZP, draw.Over)
 		}
-		// fmt.Println("5. img drawed")
-
 		//디렉토리 생성 후 이미지 제작
-		os.Mkdir("./result/"+strconv.Itoa(i), 0777)
+		go os.Mkdir("./result/"+strconv.Itoa(tokenId), 0777)
 		// result, err := os.Create("./result/" + strconv.Itoa(i) + "/image.png")
-		result2, _ := os.Create("./result2/" + strconv.Itoa(i) + ".png")
 
-		// fmt.Println("6. img created")
+		result2, err := os.Create("./result2/" + strconv.Itoa(tokenId) + ".png")
+
 		//json 제작
-		module.Json_generator(images, i)
-		// fmt.Println("7. json created")
+		module.Json_generator(images, tokenId)
 
 		if err != nil {
 			log.Fatalf("Failed to create: %s", err)
 		}
 
-		// png.Encode(result, newImage)
-		png.Encode(result2, newImage)
-		// fmt.Println("8. img incoded")
+		if tokenId == totalNum-1 {
+			png.Encode(result2, newImage)
+		} else {
+			go png.Encode(result2, newImage)
+		}
 
 		// defer result.Close()
 		defer result2.Close()
-
-		sort.Strings(dnaArr)
-
 	}
 	defer csvw.WriteAll(csvCell)
 }
